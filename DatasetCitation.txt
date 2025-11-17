@@ -1,0 +1,5 @@
+Source:
+https://github.com/hover-nlp/hover/tree/main
+
+This repo contains the source code of the baseline models described in the following paper "HoVer: A Dataset for Many-Hop Fact Extraction And Claim Verification" in Findings of EMNLP, 2020. 
+https://arxiv.org/abs/2011.03088
