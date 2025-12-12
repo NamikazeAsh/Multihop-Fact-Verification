@@ -144,6 +144,37 @@ You can generate a FAISS index of the Wikipedia dump using the `dense_retrieval_
 
 The `DenseRetr.ipynb` notebook contains code for running retrieval using the generated FAISS index.
 
+## Results
+
+The following tables summarize the performance of the different retrieval and verification models.
+
+### BM25 Retrieval
+
+| Metric | Value |
+| :--- | :--- |
+| Recall@10 | 33.76% |
+| Recall@100 | 51.7% |
+
+### BM25 + Verification
+
+| Metric | Value |
+| :--- | :--- |
+| Best Accuracy | ~51-52% |
+| Best F1-Score | ~55% |
+| Optimal Threshold | 0.05 |
+
+### BM25 + Dense Retrieval (Re-ranking) + Verification
+
+| Metric | Value | Change from BM25 |
+| :--- | :--- | :--- |
+| **Retrieval** | | |
+| Recall@10 | 43.24% | +9.48pp |
+| Coverage@10 | 83.97% | |
+| **Verification** | | |
+| Best Accuracy | ~52.5% | +0.5pp |
+| Best F1-Score | ~57% | +2pp |
+| Optimal Threshold | 0.05 | |
+
 ## Docker Commands Reference
 ```bash
 # Check if Elasticsearch is running
