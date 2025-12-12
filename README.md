@@ -193,3 +193,76 @@ docker start elasticsearch
 docker stop elasticsearch
 docker rm elasticsearch
 ```
+
+```
+
+## Comparison of Dense Retrieval Reranking vs Original BM25 Ranking
+Originally run in a notebook in Google Colab. The path is /notebooks/BM25_Retrieval_Analysis.ipynb/
+In order to run this code you must change the variables in the end of the first cell
+```bash
+recalls, ranks = analyze_retrieval_recall(
+    retrieval_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_bm25_top100.json',
+    original_hover_file='/content/hover_dev_release_v1.1.json'
+)
+
+compare_verification_by_recall(
+    retrieval_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_bm25_top100.json',
+    original_hover_file='/content/hover_dev_release_v1.1.json',
+    verification_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_verified_aggregated.json'
+)
+```
+retrieval_file must be changed to the path of hover_dev_bm25_top100.json
+
+original_hover_file must be changed to the path of hover_dev_release_v1.1.json
+
+verification_file must be changed to the path of hover_dev_verified_aggregated.json
+
+This will run analyses on the original BM25 results
+
+In the second cell
+```bash
+recalls, ranks = analyze_retrieval_recall(
+    retrieval_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_dense_reranked_top100.json',
+    original_hover_file='/content/hover_dev_release_v1.1.json'
+)
+
+compare_verification_by_recall(
+    retrieval_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_dense_reranked_top100.json',
+    original_hover_file='/content/hover_dev_release_v1.1.json',
+    verification_file='/content/drive/MyDrive/CS_6120_NLP/Project/output/hover_dev_verified_aggregated.json'
+)
+```
+Once again change the paths to the location of the corresponding files. This will run analyses on the results of the dense retrieval reranked claim/document sets.
+
+## Running Evaluation
+The two evaluation files are /notebooks/claim_evaluation_before_dense_retrieval.ipynb and /notebooks/claim_evaluation_after_dense_retrieval.ipynb
+
+Both were originally run in Google Colab
+
+They are both the same, except one runs on the BM25 results and one runs on the results after the Dense Retrieval Reranking.
+
+To run both, go to their second cell and change the paths for base_path, retrieval_file, and output_file. output_file will be where the code writes the results to.
+```bash
+base_path = '/content/drive/MyDrive/CS_6120_NLP/Project'
+retrieval_file = f'{base_path}/output/hover_dev_dense_reranked_top100.json'
+output_file = f'{base_path}/output/hover_dev_reranked_verified_aggregated.json'
+
+# Check file exists
+import os
+if os.path.exists(retrieval_file):
+    print(f"✓ Found retrieval file: {retrieval_file}")
+else:
+    print(f"✗ File not found: {retrieval_file}")
+    print("Please upload your BM25 retrieval results to Google Drive")
+```
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
