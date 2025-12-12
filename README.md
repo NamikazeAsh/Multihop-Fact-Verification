@@ -1,10 +1,10 @@
-# NLP-Final-Project
-
-This is a final project for the Natural Language Processing class at Northeastern University, Fall 2025
+# Multihop Fact Verification
 
 This project implements a fact verification system for the HoVer dataset using two different retrieval methods:
 1.  **BM25 Retrieval**: A traditional sparse retrieval method using Elasticsearch.
 2.  **Dense Retrieval**: An experimental dense retrieval method using Sentence-BERT and FAISS.
+
+**Repository**: [NamikazeAsh/Multihop-Fact-Verification](https://github.com/NamikazeAsh/Multihop-Fact-Verification)
 
 ## Overview
 
