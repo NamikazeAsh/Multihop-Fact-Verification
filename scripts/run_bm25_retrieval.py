@@ -1,7 +1,10 @@
 """
 Run BM25 retrieval on HoVer datasets
 """
-from hover_project import BM25Retriever
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.bm25_retriever.hover_project import BM25Retriever
 import json
 import os
 

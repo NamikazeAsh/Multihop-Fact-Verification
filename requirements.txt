@@ -1,0 +1,7 @@
+elasticsearch==7.17.0
+sentence-transformers
+faiss-cpu
+tqdm
+numpy
+pandas
+jupyter
