@@ -13,6 +13,8 @@ The system performs multi-hop fact verification in three stages:
 2.  **Sentence Selection**: Extract specific sentences from retrieved documents.
 3.  **Claim Verification**: Classify claims as SUPPORTED or NOT_SUPPORTED.
 
+![Pipeline and results](docs/pipeline.svg)
+
 ## Project Structure
 ```bash
 Project/
